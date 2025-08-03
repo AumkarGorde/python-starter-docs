@@ -1,0 +1,30 @@
+# Obsidian
+.obsidian/
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# VS Code
+.vscode/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Logs and backups
+*.log
+*.tmp
+*.swp
+*~
+*.bak
+*.old
+*.orig
