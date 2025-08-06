@@ -334,5 +334,73 @@ Output:
 - `sort()` sorts everything in ascending order
 - sort(reverse=True) sorts un descending order
 ```
+num_list = [100, 50, 65, 82, 23]
 
+num_list.sort()
+print(num_list)
+
+num_list.sort(reverse=True)
+print(num_list)
 ```
+```
+Output:
+[23, 50, 65, 82, 100]
+[100, 82, 65, 50, 23]
+```
+- `key = function` keyword argument can be used to customize the sorting
+```
+num_list = [100, 50, 65, 82, 23]
+
+num_list.sort()
+print(num_list)
+
+num_list.sort(reverse=True)
+print(num_list)
+```
+```
+[23, 50, 65, 82, 100]
+[100, 82, 65, 50, 23]
+```
+- By default the `sort()` method is case sensitive, resulting in all capital letters being sorted before lower case letters:
+```
+my_list = ["banana", "Orange", "Kiwi", "cherry"]
+
+my_list.sort()
+
+print(my_list)
+```
+```
+['Kiwi', 'Orange', 'banana', 'cherry']
+```
+
+- `reverse()` method reverses the current sorting order of elements
+### Copy List
+- We cannot copy a list by doing `my_list_2 = my_list_1` because `my_list_2` will only be a refernce to `my_list_1` and any change to `my_list_1` will also change `my_list_2`
+- To avoid this we need to use `copy()` method
+```
+my_list_1 = ["apple", "banana", "cherry"]
+my_list_2 = my_list_1.copy()
+print(my_list_2)
+
+my_list_2.append("coconut")
+print(my_list_1)
+print(my_list_2)
+```
+```
+Output:
+['apple', 'banana', 'cherry']
+['apple', 'banana', 'cherry']
+['apple', 'banana', 'cherry', 'coconut']
+```
+- Copy is also done by usin `list()` method
+	- `new_list = list(old_list)`
+- Copy can also be done by using the slice operator
+	- `new_list = old_list[:]`
+
+### Join List
+- `+` is used to join the list
+	- `new_list = list_1 + list_2`
+- `append()` method is used to join the list items one by one using a for loop
+- `extend()` method is used to add elements from one list to another list
+	- `list_1.extend(list_2)`
+

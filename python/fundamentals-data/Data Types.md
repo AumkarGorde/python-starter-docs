@@ -4,9 +4,9 @@ Below are the built in data types
 | ------------------- | ---------------------------- |
 | Text \| [[Strings]] | str                          |
 | [[Numeric]]         | int, float, complex          |
-| Sequence            | [[List]], tuple, range       |
-| Mapping             | dict                         |
-| Set                 | set, frozenset               |
+| Sequence            | [[List]], [[Tuples]]', range |
+| Mapping             | [[Dictionary]]               |
+| [[Set]]             | set, frozenset               |
 | [[Boolean]]         | bool                         |
 | Binary              | bytes, bytearray, memoryview |
 | None                | NoneType                     |
