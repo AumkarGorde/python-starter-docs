@@ -74,4 +74,57 @@ p1.name = "Joe"             # this calls the setter
 print(p1.name)              # this calls the getter again
 del p1.name                 # this calls the deleter
 ```
- 
+
+### __ slots __
+- By default, python stores an objects attribute in a dynamic dictionarry ( __ dict __ ), allowing you to add new attributes at runtime,
+- __ slots __ , only allow the spcific mentioned attributes and does not create a __ dict __ object 
+- Benifits of using __ slots __
+	- Memory optimization
+	- Performance boost for attribute access 
+	- Prevents accidental creation of new attributes
+- Normally, every python object has a __ dict __ to store default attributes, with __ slots __ , python use a statuc array-like structure to store calues. This is significant if you create a millions of objects
+- In case of `Inheritance` if parent defines slot then the child must also define it if you want the slot behavior to continue, or else python creates a __ dict __ again in the child
+```
+class Person:
+    __slots__ = ['name', 'age']  # allowed attributes only
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+p = Person("Alice", 30)
+p.name = "Bob"     
+p.age = 25         
+p.address = "USA" 
+```
+```
+Output:
+AttributeError: 'Person' object has no attribute 'address'
+```
+
+### @dataclass
+- Helps to quickly create classes without writing lots of boilerplate code like `__init__`, `__repr__`, `__eq__`, etc
+- Data class supports several config flags
+```
+@dataclass(
+    init=True,     # Generate __init__
+    repr=True,     # Generate __repr__
+    eq=True,       # Generate __eq__
+    order=False,   # Generate ordering methods
+    unsafe_hash=False,  # Allow __hash__ generation even if mutable
+    frozen=False,  # Make immutable
+    kw_only=False  # Make all fields keyword-only (Python 3.10+)
+)
+```
+- Forzen dataclass is an immutable object
+```
+@dataclass(frozen=True)
+class Color:
+    red: int
+    green: int
+    blue: int
+
+c = Color(255, 0, 0)
+# c.red = 128  # Error: cannot assign to field
+
+```
