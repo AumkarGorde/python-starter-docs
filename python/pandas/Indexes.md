@@ -1,0 +1,16 @@
+# Indexes
+- An index in pandas is a label (or set of labels) that uniquely identifies rows and sometimes columns in a DataFrame or Series
+	- Faster Lookups
+- Every dataFrame has a default index
+- Set Index
+	- `df.set_index('email')`
+		- Returns a new df with 'email' as the index
+		- Does not change the original df
+	- `df.set_index('email', inplace=True)`
+		- Modifies the original df directly
+		- No new df is returned, the method returns `None`
+- Index helps to use `df.loc` with particular index
+	- `df.loc['abc@em.com']` - gives all detail about user abc
+		- Once index is assigned you cannot use default index 
+			- `df.loc[0]` - error you can use `iloc` if you want to use default index
+- 
