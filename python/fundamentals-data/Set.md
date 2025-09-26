@@ -50,7 +50,19 @@ print(thisset)
 
 ### Loops in Set
 -  Looping is same as of other collection using the `in` keyword
+```
+unique = set()
+for item in unique:
+	print(item)
+```
 
+### Check values in set 
+```
+item = 'abc'
+unique = set()
+if item in unique:
+	print('Item exists')
+```
 ### Joins In Set
 - `union() or | `
 - `update()`

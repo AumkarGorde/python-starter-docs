@@ -1,6 +1,6 @@
 # Lambda
 - It is small anonymous function,
-- It can take any mumber of arguments, but can only have one expression.
+- It can take any number of arguments, but can only have one expression.
 - `lambda arguments : expression`
 ```
 x = lambda a : a * 2

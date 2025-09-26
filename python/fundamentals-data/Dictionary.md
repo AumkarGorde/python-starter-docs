@@ -173,3 +173,8 @@ year 1964
 - A dictionary can contain another dictionary
 
 
+## Get
+```
+dict.get('a',19)
+Gets the value from the dictionary if not present it returns 19
+```

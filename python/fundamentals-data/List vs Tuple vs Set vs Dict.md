@@ -83,3 +83,76 @@
 - Use `tuple` when the data is **fixed** and should not change.
 - Use `set` for **fast membership testing** and to **remove duplicates**.
 - Use `dict` to **map keys to values**, especially for **structured data**.
+
+
+
+---
+
+## 🔹 **List**
+
+* **Ordered**: Elements keep their order.
+* **Mutable**: You can add, remove, or change items.
+* **Allows duplicates**: `[1, 2, 2, 3]` is valid.
+* **Indexable**: Access by index (`my_list[0]`).
+* **Use case**: When you need a dynamic, ordered collection with duplicates.
+
+✅ Example:
+
+```python
+my_list = [10, 20, 30, 20]
+my_list.append(40)
+print(my_list)   # [10, 20, 30, 20, 40]
+```
+
+---
+
+## 🔹 **Tuple**
+
+* **Ordered**: Elements keep their order.
+* **Immutable**: Cannot change items after creation.
+* **Allows duplicates**: `(1, 2, 2, 3)` is valid.
+* **Indexable**: Access by index (`my_tuple[0]`).
+* **Use case**: When data should not change (e.g., coordinates, config values).
+
+✅ Example:
+
+```python
+my_tuple = (10, 20, 30, 20)
+# my_tuple[0] = 100  ❌ Error (immutable)
+print(my_tuple)   # (10, 20, 30, 20)
+```
+
+---
+
+## 🔹 **Set**
+
+* **Unordered**: No guaranteed order of elements.
+* **Mutable**: You can add/remove items, but cannot change existing elements.
+* **No duplicates**: `{1, 2, 2, 3}` → `{1, 2, 3}`.
+* **Not indexable**: Can’t access by index (`my_set[0]` ❌).
+* **Use case**: When you need unique items, fast membership testing, set operations (union, intersection, etc.).
+
+✅ Example:
+
+```python
+my_set = {10, 20, 30, 20}
+my_set.add(40)
+print(my_set)   # {40, 10, 20, 30}  (unordered, no duplicates)
+```
+
+---
+
+## 🔑 **Quick Comparison Table**
+
+| Feature        | List      | Tuple     | Set           |
+| -------------- | --------- | --------- | ------------- |
+| **Order**      | ✅ Ordered | ✅ Ordered | ❌ Unordered   |
+| **Mutable**    | ✅ Yes     | ❌ No      | ✅ Yes         |
+| **Duplicates** | ✅ Allowed | ✅ Allowed | ❌ Not Allowed |
+| **Indexing**   | ✅ Yes     | ✅ Yes     | ❌ No          |
+
+indexing means accesing by index
+
+---
+
+
